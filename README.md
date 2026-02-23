@@ -29,6 +29,8 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
+* [`sc hello PERSON`](#sc-hello-person)
+* [`sc hello world`](#sc-hello-world)
 * [`sc help [COMMAND]`](#sc-help-command)
 * [`sc plugins`](#sc-plugins)
 * [`sc plugins add PLUGIN`](#sc-plugins-add-plugin)
@@ -40,6 +42,48 @@ USAGE
 * [`sc plugins uninstall [PLUGIN]`](#sc-plugins-uninstall-plugin)
 * [`sc plugins unlink [PLUGIN]`](#sc-plugins-unlink-plugin)
 * [`sc plugins update`](#sc-plugins-update)
+
+## `sc hello PERSON`
+
+Say hello
+
+```
+USAGE
+  $ sc hello PERSON -f <value>
+
+ARGUMENTS
+  PERSON  Person to say hello to
+
+FLAGS
+  -f, --from=<value>  (required) Who is saying hello
+
+DESCRIPTION
+  Say hello
+
+EXAMPLES
+  $ sc hello friend --from oclif
+  hello friend from oclif! (./src/commands/hello/index.ts)
+```
+
+_See code: [src/commands/hello/index.ts](https://github.com/dishantlangayan/sc-plugin-queue/blob/v0.0.0/src/commands/hello/index.ts)_
+
+## `sc hello world`
+
+Say hello world
+
+```
+USAGE
+  $ sc hello world
+
+DESCRIPTION
+  Say hello world
+
+EXAMPLES
+  $ sc hello world
+  hello world! (./src/commands/hello/world.ts)
+```
+
+_See code: [src/commands/hello/world.ts](https://github.com/dishantlangayan/sc-plugin-queue/blob/v0.0.0/src/commands/hello/world.ts)_
 
 ## `sc help [COMMAND]`
 
