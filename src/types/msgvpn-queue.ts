@@ -1,4 +1,43 @@
-// TypeScript type definitions for SEMP API responses
+// TypeScript type definitions for SEMP API responses and requests
+
+// SEMP Config API - Queue Create Request
+export interface MsgVpnQueueCreateRequest {
+  accessType?: 'exclusive' | 'non-exclusive'
+  consumerAckPropagationEnabled?: boolean
+  deadMsgQueue?: string
+  deliveryCountEnabled?: boolean
+  deliveryDelay?: number
+  egressEnabled?: boolean
+  ingressEnabled?: boolean
+  maxBindCount?: number
+  maxDeliveredUnackedMsgsPerFlow?: number
+  maxMsgSize?: number
+  maxMsgSpoolUsage?: number
+  maxRedeliveryCount?: number
+  maxTtl?: number
+  owner?: string
+  permission?: 'consume' | 'delete' | 'modify-topic' | 'no-access' | 'read-only'
+  queueName: string
+  redeliveryDelayEnabled?: boolean
+  redeliveryDelayInitialInterval?: number
+  redeliveryDelayMaxInterval?: number
+  redeliveryDelayMultiplier?: number
+  redeliveryEnabled?: boolean
+  rejectLowPriorityMsgEnabled?: boolean
+  rejectLowPriorityMsgLimit?: number
+  rejectMsgToSenderOnDiscardBehavior?: 'always' | 'never' | 'when-queue-enabled'
+  respectMsgPriorityEnabled?: boolean
+  respectTtlEnabled?: boolean
+}
+
+// SEMP Config API - Queue Create Response
+export interface MsgVpnQueueCreateResponse {
+  data: MsgVpnQueue
+  links?: MsgVpnQueueLink
+  meta: SempMeta
+}
+
+// SEMP Monitor API - Queue List Response
 export interface MsgVpnQueuesResponse {
   collections?: MsgVpnQueueCollection[]
   data: MsgVpnQueue[]

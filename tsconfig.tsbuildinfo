@@ -1,1 +1,1 @@
-{"root":["./src/index.ts","./src/commands/broker/queue/list.ts","./src/types/broker.ts","./src/types/msgvpn-queue.ts"],"version":"5.9.3"}
+{"root":["./src/index.ts","./src/commands/broker/queue/create.ts","./src/commands/broker/queue/list.ts","./src/types/broker.ts","./src/types/msgvpn-queue.ts"],"version":"5.9.3"}
