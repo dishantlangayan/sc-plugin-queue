@@ -1,7 +1,7 @@
 {
   "name": "@dishantlangayan/sc-plugin-queue",
   "description": "Commands to interact with queues on a Solace Cloud broker",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Dishant Langayan",
   "bin": {
     "sc": "./bin/run.js"

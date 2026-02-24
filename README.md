@@ -20,7 +20,7 @@ $ npm install -g @dishantlangayan/sc-plugin-queue
 $ sc COMMAND
 running command...
 $ sc (--version)
-@dishantlangayan/sc-plugin-queue/0.1.0 linux-x64 node-v20.20.0
+@dishantlangayan/sc-plugin-queue/0.1.1 darwin-arm64 node-v24.1.0
 $ sc --help [COMMAND]
 USAGE
   $ sc COMMAND
@@ -121,7 +121,7 @@ EXAMPLES
   $ sc broker queue create --broker-id=MyBrokerId --queue-name=myQueue --max-spool-usage=100 --ingress-enabled --egress-enabled
 ```
 
-_See code: [src/commands/broker/queue/create.ts](https://github.com/dishantlangayan/sc-plugin-queue/blob/v0.1.0/src/commands/broker/queue/create.ts)_
+_See code: [src/commands/broker/queue/create.ts](https://github.com/dishantlangayan/sc-plugin-queue/blob/v0.1.1/src/commands/broker/queue/create.ts)_
 
 ## `sc broker queue list`
 
@@ -159,5 +159,5 @@ EXAMPLES
   $ sc broker queue list --broker-name=MyBrokerName --queue-name=test*"
 ```
 
-_See code: [src/commands/broker/queue/list.ts](https://github.com/dishantlangayan/sc-plugin-queue/blob/v0.1.0/src/commands/broker/queue/list.ts)_
+_See code: [src/commands/broker/queue/list.ts](https://github.com/dishantlangayan/sc-plugin-queue/blob/v0.1.1/src/commands/broker/queue/list.ts)_
 <!-- commandsstop -->
