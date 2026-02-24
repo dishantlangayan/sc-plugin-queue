@@ -29,8 +29,7 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`sc hello PERSON`](#sc-hello-person)
-* [`sc hello world`](#sc-hello-world)
+* [`sc broker queue list`](#sc-broker-queue-list)
 * [`sc help [COMMAND]`](#sc-help-command)
 * [`sc plugins`](#sc-plugins)
 * [`sc plugins add PLUGIN`](#sc-plugins-add-plugin)
@@ -43,47 +42,43 @@ USAGE
 * [`sc plugins unlink [PLUGIN]`](#sc-plugins-unlink-plugin)
 * [`sc plugins update`](#sc-plugins-update)
 
-## `sc hello PERSON`
+## `sc broker queue list`
 
-Say hello
+Get a list of Queue objects from the Solace Cloud Broker.
 
 ```
 USAGE
-  $ sc hello PERSON -f <value>
-
-ARGUMENTS
-  PERSON  Person to say hello to
+  $ sc broker queue list [--json] [--log-level debug|warn|error|info|trace] [-b <value>] [-n <value>] [-c <value>] [-q
+    <value>]
 
 FLAGS
-  -f, --from=<value>  (required) Who is saying hello
+  -b, --broker-id=<value>    Id of the event broker service.
+  -c, --count=<value>        [default: 10] Limit the number of queues returned
+  -n, --broker-name=<value>  Name of the event broker service.
+  -q, --queue-name=<value>   Name of the queue(s) to filter.
+
+GLOBAL FLAGS
+  --json                Format output as json.
+  --log-level=<option>  [default: info] Specify level for logging.
+                        <options: debug|warn|error|info|trace>
 
 DESCRIPTION
-  Say hello
+  Get a list of Queue objects from the Solace Cloud Broker.
+
+  Token Permissions: [ mission_control:access or services:get or services:get:self or services:view or
+  services:view:self ]
 
 EXAMPLES
-  $ sc hello friend --from oclif
-  hello friend from oclif! (./src/commands/hello/index.ts)
+  $ sc broker queue list --broker-id=MyBrokerId
+
+  $ sc broker queue list --broker-name=MyBrokerName
+
+  $ sc broker queue list --broker-name=MyBrokerName --count=10
+
+  $ sc broker queue list --broker-name=MyBrokerName --queue-name=test*"
 ```
 
-_See code: [src/commands/hello/index.ts](https://github.com/dishantlangayan/sc-plugin-queue/blob/v0.0.0/src/commands/hello/index.ts)_
-
-## `sc hello world`
-
-Say hello world
-
-```
-USAGE
-  $ sc hello world
-
-DESCRIPTION
-  Say hello world
-
-EXAMPLES
-  $ sc hello world
-  hello world! (./src/commands/hello/world.ts)
-```
-
-_See code: [src/commands/hello/world.ts](https://github.com/dishantlangayan/sc-plugin-queue/blob/v0.0.0/src/commands/hello/world.ts)_
+_See code: [src/commands/broker/queue/list.ts](https://github.com/dishantlangayan/sc-plugin-queue/blob/v0.0.0/src/commands/broker/queue/list.ts)_
 
 ## `sc help [COMMAND]`
 
