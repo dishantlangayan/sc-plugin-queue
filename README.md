@@ -20,7 +20,7 @@ $ npm install -g @dishantlangayan/sc-plugin-queue
 $ sc COMMAND
 running command...
 $ sc (--version)
-@dishantlangayan/sc-plugin-queue/0.0.0 linux-x64 node-v20.20.0
+@dishantlangayan/sc-plugin-queue/0.1.0 darwin-arm64 node-v24.1.0
 $ sc --help [COMMAND]
 USAGE
   $ sc COMMAND
@@ -29,6 +29,10 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
+<<<<<<< HEAD
+=======
+* [`sc broker queue create [FILE]`](#sc-broker-queue-create-file)
+>>>>>>> 6018da5 (0.1.0)
 * [`sc broker queue list`](#sc-broker-queue-list)
 * [`sc help [COMMAND]`](#sc-help-command)
 * [`sc plugins`](#sc-plugins)
@@ -42,6 +46,7 @@ USAGE
 * [`sc plugins unlink [PLUGIN]`](#sc-plugins-unlink-plugin)
 * [`sc plugins update`](#sc-plugins-update)
 
+<<<<<<< HEAD
 ## `sc broker queue list`
 
 Get a list of Queue objects from the Solace Cloud Broker.
@@ -79,6 +84,69 @@ EXAMPLES
 ```
 
 _See code: [src/commands/broker/queue/list.ts](https://github.com/dishantlangayan/sc-plugin-queue/blob/v0.0.0/src/commands/broker/queue/list.ts)_
+=======
+## `sc broker queue create [FILE]`
+
+describe the command here
+
+```
+USAGE
+  $ sc broker queue create [FILE] [-f] [-n <value>]
+
+ARGUMENTS
+  [FILE]  file to read
+
+FLAGS
+  -f, --force
+  -n, --name=<value>  name to print
+
+DESCRIPTION
+  describe the command here
+
+EXAMPLES
+  $ sc broker queue create
+```
+
+_See code: [src/commands/broker/queue/create.ts](https://github.com/dishantlangayan/sc-plugin-queue/blob/v0.1.0/src/commands/broker/queue/create.ts)_
+
+## `sc broker queue list`
+
+Get a list of Queue objects from the Solace Cloud Broker.
+
+```
+USAGE
+  $ sc broker queue list [--json] [--log-level debug|warn|error|info|trace] [-b <value>] [-n <value>] [-c <value>] [-q
+    <value>]
+
+FLAGS
+  -b, --broker-id=<value>    Id of the event broker service.
+  -c, --count=<value>        [default: 10] Limit the number of queues returned
+  -n, --broker-name=<value>  Name of the event broker service.
+  -q, --queue-name=<value>   Name of the queue(s) to filter.
+
+GLOBAL FLAGS
+  --json                Format output as json.
+  --log-level=<option>  [default: info] Specify level for logging.
+                        <options: debug|warn|error|info|trace>
+
+DESCRIPTION
+  Get a list of Queue objects from the Solace Cloud Broker.
+
+  Token Permissions: [ mission_control:access or services:get or services:get:self or services:view or
+  services:view:self ]
+
+EXAMPLES
+  $ sc broker queue list --broker-id=MyBrokerId
+
+  $ sc broker queue list --broker-name=MyBrokerName
+
+  $ sc broker queue list --broker-name=MyBrokerName --count=10
+
+  $ sc broker queue list --broker-name=MyBrokerName --queue-name=test*"
+```
+
+_See code: [src/commands/broker/queue/list.ts](https://github.com/dishantlangayan/sc-plugin-queue/blob/v0.1.0/src/commands/broker/queue/list.ts)_
+>>>>>>> 6018da5 (0.1.0)
 
 ## `sc help [COMMAND]`
 
