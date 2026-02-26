@@ -37,6 +37,11 @@ export interface MsgVpnQueueCreateResponse {
   meta: SempMeta
 }
 
+// SEMP Config API - Queue Delete Response
+export interface MsgVpnQueueDeleteResponse {
+  meta: SempMeta
+}
+
 // SEMP Monitor API - Single Queue Response
 export interface MsgVpnQueueResponse {
   data: MsgVpnQueue
