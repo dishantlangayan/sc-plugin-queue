@@ -37,6 +37,13 @@ export interface MsgVpnQueueCreateResponse {
   meta: SempMeta
 }
 
+// SEMP Monitor API - Single Queue Response
+export interface MsgVpnQueueResponse {
+  data: MsgVpnQueue
+  links?: MsgVpnQueueLink
+  meta: SempMeta
+}
+
 // SEMP Monitor API - Queue List Response
 export interface MsgVpnQueuesResponse {
   collections?: MsgVpnQueueCollection[]
