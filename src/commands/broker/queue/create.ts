@@ -41,10 +41,6 @@ Token Permissions: [ mission_control:access or services:get or services:get:self
     'dead-msg-queue': Flags.string({
       description: 'The name of the Dead Message Queue.',
     }),
-    'delivery-count-enabled': Flags.boolean({
-      allowNo: true,
-      description: 'Enable or disable delivery count on the messages.',
-    }),
     'delivery-delay': Flags.integer({
       description: 'The delay, in seconds, to apply to messages arriving on the queue before the messages are eligible for delivery.',
       min: 0,
@@ -98,22 +94,6 @@ Token Permissions: [ mission_control:access or services:get or services:get:self
       char: 'q',
       description: 'The name of the queue to create.',
       required: true,
-    }),
-    'redelivery-delay-enabled': Flags.boolean({
-      allowNo: true,
-      description: 'Enable or disable a message redelivery delay.',
-    }),
-    'redelivery-delay-initial-interval': Flags.integer({
-      description: 'The delay to be used between the first 2 redelivery attempts, in milliseconds.',
-      min: 0,
-    }),
-    'redelivery-delay-max-interval': Flags.integer({
-      description: 'The maximum delay to be used between any 2 redelivery attempts, in milliseconds.',
-      min: 0,
-    }),
-    'redelivery-delay-multiplier': Flags.integer({
-      description: 'The amount each delay interval is multiplied by after each failed delivery attempt.',
-      min: 0,
     }),
     'redelivery-enabled': Flags.boolean({
       allowNo: true,
@@ -188,7 +168,6 @@ Token Permissions: [ mission_control:access or services:get or services:get:self
         consumerAckPropagationEnabled: flags['consumer-ack-propagation-enabled'],
       }),
       ...(flags['dead-msg-queue'] && {deadMsgQueue: flags['dead-msg-queue']}),
-      ...(flags['delivery-count-enabled'] !== undefined && {deliveryCountEnabled: flags['delivery-count-enabled']}),
       ...(flags['delivery-delay'] !== undefined && {deliveryDelay: flags['delivery-delay']}),
       ...(flags['egress-enabled'] !== undefined && {egressEnabled: flags['egress-enabled']}),
       ...(flags['ingress-enabled'] !== undefined && {ingressEnabled: flags['ingress-enabled']}),
@@ -202,18 +181,6 @@ Token Permissions: [ mission_control:access or services:get or services:get:self
       ...(flags['max-ttl'] !== undefined && {maxTtl: flags['max-ttl']}),
       ...(flags.owner && {owner: flags.owner}),
       ...(flags.permission && {permission: flags.permission as MsgVpnQueueCreateRequest['permission']}),
-      ...(flags['redelivery-delay-enabled'] !== undefined && {
-        redeliveryDelayEnabled: flags['redelivery-delay-enabled'],
-      }),
-      ...(flags['redelivery-delay-initial-interval'] !== undefined && {
-        redeliveryDelayInitialInterval: flags['redelivery-delay-initial-interval'],
-      }),
-      ...(flags['redelivery-delay-max-interval'] !== undefined && {
-        redeliveryDelayMaxInterval: flags['redelivery-delay-max-interval'],
-      }),
-      ...(flags['redelivery-delay-multiplier'] !== undefined && {
-        redeliveryDelayMultiplier: flags['redelivery-delay-multiplier'],
-      }),
       ...(flags['redelivery-enabled'] !== undefined && {redeliveryEnabled: flags['redelivery-enabled']}),
       ...(flags['reject-low-priority-msg-enabled'] !== undefined && {
         rejectLowPriorityMsgEnabled: flags['reject-low-priority-msg-enabled'],
