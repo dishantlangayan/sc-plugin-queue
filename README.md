@@ -20,7 +20,7 @@ $ npm install -g @dishantlangayan/sc-plugin-queue
 $ sc COMMAND
 running command...
 $ sc (--version)
-@dishantlangayan/sc-plugin-queue/0.1.2 darwin-arm64 node-v24.1.0
+@dishantlangayan/sc-plugin-queue/0.1.2 linux-x64 node-v20.20.0
 $ sc --help [COMMAND]
 USAGE
   $ sc COMMAND
