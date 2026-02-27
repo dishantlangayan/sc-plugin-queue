@@ -129,12 +129,16 @@ export function aQueue(
   queueName: string,
   options?: {
     accessType?: 'exclusive' | 'non-exclusive'
+    consumerAckPropagationEnabled?: boolean
+    deadMsgQueue?: string
     egressEnabled?: boolean
     ingressEnabled?: boolean
     maxMsgSpoolUsage?: number
     msgVpnName?: string
     owner?: string
     permission?: 'consume' | 'delete' | 'modify-topic' | 'no-access' | 'read-only'
+    redeliveryEnabled?: boolean
+    respectMsgPriorityEnabled?: boolean
   },
 ): MsgVpnQueue {
   return {
@@ -146,6 +150,14 @@ export function aQueue(
     owner: options?.owner ?? 'user1',
     permission: options?.permission ?? 'modify-topic',
     queueName,
+    ...(options?.consumerAckPropagationEnabled !== undefined && {
+      consumerAckPropagationEnabled: options.consumerAckPropagationEnabled,
+    }),
+    ...(options?.deadMsgQueue && {deadMsgQueue: options.deadMsgQueue}),
+    ...(options?.redeliveryEnabled !== undefined && {redeliveryEnabled: options.redeliveryEnabled}),
+    ...(options?.respectMsgPriorityEnabled !== undefined && {
+      respectMsgPriorityEnabled: options.respectMsgPriorityEnabled,
+    }),
   }
 }
 

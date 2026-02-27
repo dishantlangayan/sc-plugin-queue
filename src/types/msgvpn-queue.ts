@@ -30,8 +30,44 @@ export interface MsgVpnQueueCreateRequest {
   respectTtlEnabled?: boolean
 }
 
+// SEMP Config API - Queue Update Request
+export interface MsgVpnQueueUpdateRequest {
+  accessType?: 'exclusive' | 'non-exclusive'
+  consumerAckPropagationEnabled?: boolean
+  deadMsgQueue?: string
+  deliveryCountEnabled?: boolean
+  deliveryDelay?: number
+  egressEnabled?: boolean
+  ingressEnabled?: boolean
+  maxBindCount?: number
+  maxDeliveredUnackedMsgsPerFlow?: number
+  maxMsgSize?: number
+  maxMsgSpoolUsage?: number
+  maxRedeliveryCount?: number
+  maxTtl?: number
+  owner?: string
+  permission?: 'consume' | 'delete' | 'modify-topic' | 'no-access' | 'read-only'
+  redeliveryDelayEnabled?: boolean
+  redeliveryDelayInitialInterval?: number
+  redeliveryDelayMaxInterval?: number
+  redeliveryDelayMultiplier?: number
+  redeliveryEnabled?: boolean
+  rejectLowPriorityMsgEnabled?: boolean
+  rejectLowPriorityMsgLimit?: number
+  rejectMsgToSenderOnDiscardBehavior?: 'always' | 'never' | 'when-queue-enabled'
+  respectMsgPriorityEnabled?: boolean
+  respectTtlEnabled?: boolean
+}
+
 // SEMP Config API - Queue Create Response
 export interface MsgVpnQueueCreateResponse {
+  data: MsgVpnQueue
+  links?: MsgVpnQueueLink
+  meta: SempMeta
+}
+
+// SEMP Config API - Queue Update Response
+export interface MsgVpnQueueUpdateResponse {
   data: MsgVpnQueue
   links?: MsgVpnQueueLink
   meta: SempMeta
