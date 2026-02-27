@@ -20,7 +20,7 @@ $ npm install -g @dishantlangayan/sc-plugin-queue
 $ sc COMMAND
 running command...
 $ sc (--version)
-@dishantlangayan/sc-plugin-queue/0.1.1 linux-x64 node-v20.20.0
+@dishantlangayan/sc-plugin-queue/0.1.2 darwin-arm64 node-v24.1.0
 $ sc --help [COMMAND]
 USAGE
   $ sc COMMAND
@@ -114,7 +114,7 @@ EXAMPLES
   $ sc broker queue create --broker-id=MyBrokerId --queue-name=myQueue --max-spool-usage=100 --ingress-enabled --egress-enabled
 ```
 
-_See code: [src/commands/broker/queue/create.ts](https://github.com/dishantlangayan/sc-plugin-queue/blob/v0.1.1/src/commands/broker/queue/create.ts)_
+_See code: [src/commands/broker/queue/create.ts](https://github.com/dishantlangayan/sc-plugin-queue/blob/v0.1.2/src/commands/broker/queue/create.ts)_
 
 ## `sc broker queue delete`
 
@@ -154,7 +154,7 @@ EXAMPLES
   $ sc broker queue delete --broker-id=MyBrokerId --queue-name=myQueue --force
 ```
 
-_See code: [src/commands/broker/queue/delete.ts](https://github.com/dishantlangayan/sc-plugin-queue/blob/v0.1.1/src/commands/broker/queue/delete.ts)_
+_See code: [src/commands/broker/queue/delete.ts](https://github.com/dishantlangayan/sc-plugin-queue/blob/v0.1.2/src/commands/broker/queue/delete.ts)_
 
 ## `sc broker queue display`
 
@@ -188,7 +188,7 @@ EXAMPLES
   $ sc broker queue display --broker-name=MyBrokerName --queue-name=myQueue
 ```
 
-_See code: [src/commands/broker/queue/display.ts](https://github.com/dishantlangayan/sc-plugin-queue/blob/v0.1.1/src/commands/broker/queue/display.ts)_
+_See code: [src/commands/broker/queue/display.ts](https://github.com/dishantlangayan/sc-plugin-queue/blob/v0.1.2/src/commands/broker/queue/display.ts)_
 
 ## `sc broker queue list`
 
@@ -226,7 +226,7 @@ EXAMPLES
   $ sc broker queue list --broker-name=MyBrokerName --queue-name=test*"
 ```
 
-_See code: [src/commands/broker/queue/list.ts](https://github.com/dishantlangayan/sc-plugin-queue/blob/v0.1.1/src/commands/broker/queue/list.ts)_
+_See code: [src/commands/broker/queue/list.ts](https://github.com/dishantlangayan/sc-plugin-queue/blob/v0.1.2/src/commands/broker/queue/list.ts)_
 
 ## `sc broker queue update`
 
@@ -305,5 +305,5 @@ EXAMPLES
   $ sc broker queue update --broker-id=MyBrokerId --queue-name=myQueue --max-spool-usage=200 --no-ingress-enabled
 ```
 
-_See code: [src/commands/broker/queue/update.ts](https://github.com/dishantlangayan/sc-plugin-queue/blob/v0.1.1/src/commands/broker/queue/update.ts)_
+_See code: [src/commands/broker/queue/update.ts](https://github.com/dishantlangayan/sc-plugin-queue/blob/v0.1.2/src/commands/broker/queue/update.ts)_
 <!-- commandsstop -->
