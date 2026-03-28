@@ -1,5 +1,8 @@
-@dishantlangayan/sc-plugin-queue
+[ARCHIVED] @dishantlangayan/sc-plugin-queue
 =================
+
+> [!CAUTION]
+This repository has been archived. **DO NOT USE THIS PLUGIN**. The functionality has been ported to the sc-plugin-broker repository. 
 
 Commands to interact with queues on a Solace Cloud broker
 
